@@ -4,9 +4,7 @@ def dijkstra_repulesi_utak(utak_adj_list, kezdopont):
     tavolsagok = [float('inf')]*(n+1) #nullás index nem használása
     szulok = [None]*(n+1)
     csucsok_prioritasi_sora = []
-    #csúcsok eltárolása prioritási sorban legrövidebb úthosszak szerint
-    #for csucs in utak_adj_list.keys():
-    #    heapq.heappush(csucsok_prioritasi_sora, (min(utak_adj_list[csucs]), csucs))
+    #csúcsok eltárolása prioritási sorban legrövidebb úthosszak szerint, de kezdetben csak az első elem van benne
     heapq.heappush(csucsok_prioritasi_sora, (0, kezdopont))
     tavolsagok[kezdopont]=0
     while csucsok_prioritasi_sora:
@@ -51,3 +49,4 @@ for _ in range(m):
 #bemeneti utak szomszédsági listájának tesztelése
 #print(graph)
 dijkstra_repulesi_utak(graph, 1)
+
